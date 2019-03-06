@@ -4,64 +4,269 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:orientation="vertical"
+    android:background="#1b1b1b"
     android:gravity="center"
-    android:background="#1b1b1b">
+    android:orientation="vertical"
+    tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/forward"
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Land:"
+        android:layout_margin="5dp"
+        android:textAlignment="center"
+        android:textColor="#fff"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:text="Forward"/>
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/backward"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/forwardLeft"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Forward Left" />
+
+            <Button
+                android:id="@+id/forward"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Forward"
+                android:layout_marginLeft="10dp"/>
+
+            <Button
+                android:id="@+id/forwardRight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="Forward Right" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/stop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="Stop" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/backwardLeft"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="Back Left" />
+
+            <Button
+                android:id="@+id/backward"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="Back" />
+
+            <Button
+                android:id="@+id/backwardRight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="Back Right" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Water:"
+        android:textAlignment="center"
+        android:textColor="#fff"
+        android:layout_margin="5dp"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:text="Backward"/>
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/stop"
-        android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/forwardLeftPropeler"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="Forward Left" />
+
+            <Button
+                android:id="@+id/forwardPropeler"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="Forward" />
+
+            <Button
+                android:id="@+id/forwardRightPropeler"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="Forward Right" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/stopPropeler"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="Stop" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/backwardLeftPropeler"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="Back Left" />
+
+            <Button
+                android:id="@+id/backwardPropeler"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="Back" />
+
+            <Button
+                android:id="@+id/backwardRightPropeler"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="Back Right" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:text="Stop"/>
+        android:textAlignment="center"
+        android:text="Tools:"
+        android:layout_margin="5dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#fff"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/vacuum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Vacuum On/Off" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/belt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Convyer Belt On/Off" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
 
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical">
+
         <TextView
-            android:layout_marginLeft="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
             android:text="Made By:"
-            android:textSize="25sp"
             android:textColor="#fff"
-            android:textStyle="bold"/>
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <TextView
-            android:layout_marginLeft="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
             android:text="\t\t\t\t\t\t\t\tSahil Patel\n\t\t\t\t\t\t\t\tPrateek Sharma \n\t\t\t\t\t\t\t\tHassan Mulla \n\t\t\t\t\t\t\t\tManthan Prabhu"
-            android:textSize="25sp"
             android:textColor="#fff"
-            android:textStyle="bold"
-            android:layout_marginBottom="20dp"/>
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
-        <TextView
-            android:layout_marginLeft="20dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Special Thanks:\n\t\t\t\t\t\t\t\tHarsh Khandeparkar\n\t\t\t\t\t\t\t\tOmkar Sawant\n\t\t\t\t\t\t\t\tShlok Zambreker\n\t\t\t\t\t\t\t\tLaukik Sir\n\t\t\t\t\t\t\t\tManohar Sir\n\t\t\t\t\t\t\t\tWilson Sir"
-            android:textSize="25sp"
-            android:textColor="#fff"
-            android:textStyle="bold"/>
+        <!--<TextView-->
+        <!--android:layout_marginLeft="20dp"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="Special Thanks:\n\t\t\t\t\t\t\t\tHarsh Khandeparkar\n\t\t\t\t\t\t\t\tOmkar Sawant\n\t\t\t\t\t\t\t\tShlok Zambreker\n\t\t\t\t\t\t\t\tLaukik Sir\n\t\t\t\t\t\t\t\tManohar Sir\n\t\t\t\t\t\t\t\tWilson Sir"-->
+        <!--android:textSize="25sp"-->
+        <!--android:textColor="#fff"-->
+        <!--android:textStyle="bold"/>-->
     </LinearLayout>
 
 </LinearLayout>

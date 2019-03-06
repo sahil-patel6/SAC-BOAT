@@ -22,7 +22,9 @@ import java.util.UUID;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button forward,backward,stop;
+    Button forward, forwardLeft, forwardRight, backward, backwardLeft, backwardRight, stop;
+    Button forwardPropeler, forwardLeftPropeler, forwardRightPropeler, backwardPropeler, backwardLeftPropeler, backwardRightPropeler, stopPropeler;
+    Button vacuum,belt;
     String address = null, name = null;
     BluetoothAdapter myBluetooth = null;
     BluetoothSocket btSocket = null;
@@ -38,27 +40,132 @@ public class MainActivity extends AppCompatActivity {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        //land
         forward = findViewById(R.id.forward);
+        forwardLeft = findViewById(R.id.forwardLeft);
+        forwardRight = findViewById(R.id.forwardRight);
         backward = findViewById(R.id.backward);
+        backwardLeft = findViewById(R.id.backwardLeft);
+        backwardRight = findViewById(R.id.backwardRight);
         stop = findViewById(R.id.stop);
+        //water
+
+        forwardPropeler = findViewById(R.id.forwardPropeler);
+        forwardLeftPropeler = findViewById(R.id.forwardLeftPropeler);
+        forwardRightPropeler = findViewById(R.id.forwardRightPropeler);
+        backwardPropeler = findViewById(R.id.backwardPropeler);
+        backwardLeftPropeler = findViewById(R.id.backwardLeftPropeler);
+        backwardRightPropeler = findViewById(R.id.backwardRightPropeler);
+        stopPropeler = findViewById(R.id.stopPropeler);
+
+        //tools
+
+        vacuum = findViewById(R.id.vacuum);
+        belt = findViewById(R.id.belt);
+
+        //land
         forward.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                sendDataViaBluetooth("w");
+                sendDataViaBluetooth("W");
+            }
+        });
+        forwardLeft.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sendDataViaBluetooth("A");
+            }
+        });
+        forwardRight.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sendDataViaBluetooth("D");
             }
         });
         backward.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                sendDataViaBluetooth("s");
+                sendDataViaBluetooth("S");
+            }
+        });
+        backwardLeft.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sendDataViaBluetooth("Q");
+            }
+        });
+        backwardRight.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sendDataViaBluetooth("E");
             }
         });
         stop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sendDataViaBluetooth("C");
+            }
+        });
+
+        //water
+
+        forwardPropeler.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sendDataViaBluetooth("w");
+            }
+        });
+        forwardLeftPropeler.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sendDataViaBluetooth("a");
+            }
+        });
+        forwardRightPropeler.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sendDataViaBluetooth("d");
+            }
+        });
+        backwardPropeler.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sendDataViaBluetooth("s");
+            }
+        });
+        backwardLeftPropeler.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sendDataViaBluetooth("q");
+            }
+        });
+        backwardRightPropeler.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sendDataViaBluetooth("e");
+            }
+        });
+        stopPropeler.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 sendDataViaBluetooth("c");
             }
         });
+
+        vacuum.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sendDataViaBluetooth("v");
+            }
+        });
+
+        belt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sendDataViaBluetooth("b");
+            }
+        });
+
     }
 
     private void bluetooth_connect_device() throws IOException {
@@ -90,7 +197,7 @@ public class MainActivity extends AppCompatActivity {
         try {
             if (btSocket != null) {
                 btSocket.getOutputStream().write(s.getBytes());
-                Toast.makeText(getApplicationContext(),"Sent Successfully",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Sent Successfully", Toast.LENGTH_SHORT).show();
             }
         } catch (Exception e) {
             Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
